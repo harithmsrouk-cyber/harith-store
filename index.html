@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Market</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#0b1120;
+color:white;
+}
+
+/* Navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:#020617;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#22c55e;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:15px;
+}
+
+/* Hero */
+
+.hero{
+padding:100px 20px;
+text-align:center;
+background:linear-gradient(120deg,#020617,#1e293b);
+}
+
+.hero h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#94a3b8;
+}
+
+/* Search */
+
+.search{
+text-align:center;
+margin-top:30px;
+}
+
+.search input{
+padding:12px;
+width:300px;
+border-radius:8px;
+border:none;
+}
+
+/* Products */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+padding:50px 80px;
+}
+
+.card{
+background:#1e293b;
+border-radius:12px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+.card-body{
+padding:20px;
+text-align:center;
+}
+
+.price{
+color:#22c55e;
+margin:10px 0;
+font-size:18px;
+}
+
+button{
+background:#22c55e;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#16a34a;
+}
+
+/* Footer */
+
+footer{
+background:#020617;
+text-align:center;
+padding:30px;
+color:#94a3b8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="logo">GAME MARKET</div>
+
+<div class="menu">
+<a href="#">الرئيسية</a>
+<a href="#">الألعاب</a>
+<a href="#">العروض</a>
+<a href="#">تواصل</a>
+</div>
+</div>
+
+<div class="hero">
+<h1>أفضل متجر حسابات ألعاب</h1>
+<p>اشتر حسابات الألعاب بأفضل الأسعار</p>
+
+<div class="search">
+<input type="text" placeholder="ابحث عن لعبة...">
+</div>
+</div>
+
+<div class="products">
+
+<div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg">
+<div class="card-body">
+<h3>GTA V Account</h3>
+<p class="price">$10</p>
+<button>شراء</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg">
+<div class="card-body">
+<h3>CS2 Prime</h3>
+<p class="price">$8</p>
+<button>شراء</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/header.jpg">
+<div class="card-body">
+<h3>Apex Legends</h3>
+<p class="price">$12</p>
+<button>شراء</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg">
+<div class="card-body">
+<h3>Witcher 3</h3>
+<p class="price">$9</p>
+<button>شراء</button>
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 Game Market
+</footer>
+
+</body>
+</html>
