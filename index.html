@@ -1,172 +1,98 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>حزمة الألعاب الكبرى على Steam</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #121212;
-      color: #fff;
-    }
-    header {
-      background-color: #1f1f1f;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #ff4500;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    .bundle-card {
-      background-color: #1e1e1e;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 5px 15px rgba(255,69,0,0.3);
-    }
-    .bundle-card h2 {
-      text-align: center;
-      color: #ff4500;
-      margin-bottom: 15px;
-    }
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 10px;
-      max-height: 500px;
-      overflow-y: auto;
-      padding: 10px;
-      border: 1px solid #333;
-      border-radius: 8px;
-      background-color: #141414;
-    }
-    .game-item {
-      background-color: #252525;
-      border-radius: 8px;
-      text-align: center;
-      padding: 5px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .game-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(255,69,0,0.4);
-    }
-    .game-item img {
-      width: 100%;
-      border-radius: 6px;
-      height: 100px;
-      object-fit: cover;
-      margin-bottom: 5px;
-    }
-    .game-item span {
-      font-size: 0.8rem;
-      display: block;
-    }
-    .bundle-info {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .bundle-info p {
-      font-size: 1.2rem;
-      margin: 10px 0;
-    }
-    .buy-btn {
-      display: block;
-      margin: 0 auto;
-      background-color: #ff4500;
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: background-color 0.2s;
-    }
-    .buy-btn:hover {
-      background-color: #e03e00;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1f1f1f;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حزمة الألعاب الكبرى - الدفع</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family:'Cairo', sans-serif; margin:0; padding:0; background:#121212; color:#fff; }
+  header { background:#1f1f1f; padding:20px; text-align:center; }
+  header h1 { margin:0; color:#ff4500; }
+  .container { max-width:1100px; margin:30px auto; padding:0 20px; }
+  .bundle-card { background:#1e1e1e; border-radius:12px; padding:20px; box-shadow:0 5px 15px rgba(255,69,0,0.3); }
+  .bundle-card h2 { text-align:center; color:#ff4500; margin-bottom:15px; }
+  .games-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; max-height:500px; overflow-y:auto; padding:10px; border:1px solid #333; border-radius:8px; background:#141414; }
+  .game-item { background:#252525; border-radius:8px; text-align:center; padding:5px; transition: transform 0.2s, box-shadow 0.2s; }
+  .game-item:hover { transform:scale(1.05); box-shadow:0 5px 15px rgba(255,69,0,0.4); }
+  .game-item img { width:100%; border-radius:6px; height:100px; object-fit:cover; margin-bottom:5px; }
+  .game-item span { font-size:0.8rem; display:block; }
+  .bundle-info { text-align:center; margin:20px 0; }
+  .bundle-info p { font-size:1.2rem; margin:10px 0; }
+  .buy-btn { display:block; margin:10px auto; background:#ff4500; color:#fff; border:none; padding:15px 30px; font-size:1.1rem; cursor:pointer; border-radius:8px; transition:0.2s; }
+  .buy-btn:hover { background:#e03e00; }
+  footer { text-align:center; padding:20px; background:#1f1f1f; margin-top:40px; font-size:0.9rem; color:#aaa; }
+</style>
 </head>
 <body>
-  <header>
-    <h1>حزمة الألعاب الكبرى على Steam</h1>
-  </header>
 
-  <div class="container">
-    <div class="bundle-card">
-      <h2>الحزمة الكاملة - 4 دولار</h2>
+<header>
+<h1>حزمة الألعاب الكبرى على Steam</h1>
+</header>
 
-      <div class="games-grid" id="gamesGrid">
-        <!-- الألعاب ستضاف تلقائياً بالـ JS -->
-      </div>
+<div class="container">
+  <div class="bundle-card">
+    <h2>الحزمة الكاملة - 4 دولار</h2>
+    <div class="games-grid" id="gamesGrid"></div>
 
-      <div class="bundle-info">
-        <p>احصل على كل الألعاب السابقة بسعر 4 دولار فقط!</p>
-        <button class="buy-btn" onclick="buyBundle()">شراء الآن</button>
-      </div>
+    <div class="bundle-info">
+      <p>اختر طريقة الدفع المفضلة لإتمام الشراء:</p>
+      <!-- PayPal -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="your-paypal-email@example.com">
+        <input type="hidden" name="item_name" value="حزمة الألعاب الكبرى">
+        <input type="hidden" name="amount" value="4.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <button type="submit" class="buy-btn">الدفع عبر PayPal</button>
+      </form>
+
+      <!-- Binance Pay -->
+      <form action="https://www.binance.com/en/pay" method="get" target="_blank">
+        <button type="submit" class="buy-btn">الدفع عبر Binance Pay</button>
+      </form>
+
+      <!-- Wordot Pay (مثال زر وهمي) -->
+      <form action="https://www.wordotpay.com/payment" method="get" target="_blank">
+        <button type="submit" class="buy-btn">الدفع عبر Wordot Pay</button>
+      </form>
     </div>
   </div>
+</div>
 
-  <footer>
-    © 2026 جميع الحقوق محفوظة
-  </footer>
+<footer>
+© 2026 جميع الحقوق محفوظة
+</footer>
 
-  <script>
-    const games = [
-      "Resident Evil 2","Resident Evil 3","Resident Evil 4","Resident Evil 5",
-      "Resident Evil 6","Resident Evil 7 Biohazard","Resident Evil Village",
-      "Resident Evil Requiem","Mafia: The Old Country","Mafia Definitive Edition",
-      "Mafia II","Mafia II Definitive Edition","Mafia III","Dying Light",
-      "Dying Light 2 Stay Human","Metro 2033 Redux","Metro: Last Light Redux",
-      "Metro Exodus","Metro Complete Edition","The Witcher Enhanced Edition",
-      "The Witcher 2: Assassins of Kings","The Witcher 3: Wild Hunt",
-      "Borderlands 2","Borderlands 3","Half-Life 2","Half-Life 2: Deathmatch",
-      "Portal","Portal 2","Mortal Kombat X","Mortal Kombat 1",
-      "Hello Neighbor","Hello Neighbor 2","Far Cry","Far Cry 2",
-      "Alan Wake","Alan Wake's American Nightmare","Poppy Playtime",
-      "Beyond: Two Souls","Days Gone","Detroit: Become Human",
-      "The Last of Us Part I","The Last of Us Part II Remastered",
-      "Marvel Spider-Man Remastered","Uncharted: Legacy of Thieves Collection",
-      "Life is Strange","Hellblade: Senua's Sacrifice","Cyberpunk 2077",
-      "Just Cause 3","Horizon Zero Dawn Complete Edition","Horizon Zero Dawn Remastered",
-      "Kingdom Come: Deliverance"
-    ];
+<script>
+  const games = [
+    "Resident Evil 2","Resident Evil 3","Resident Evil 4","Resident Evil 5",
+    "Resident Evil 6","Resident Evil 7 Biohazard","Resident Evil Village",
+    "Resident Evil Requiem","Mafia: The Old Country","Mafia Definitive Edition",
+    "Mafia II","Mafia II Definitive Edition","Mafia III","Dying Light",
+    "Dying Light 2 Stay Human","Metro 2033 Redux","Metro: Last Light Redux",
+    "Metro Exodus","Metro Complete Edition","The Witcher Enhanced Edition",
+    "The Witcher 2: Assassins of Kings","The Witcher 3: Wild Hunt",
+    "Borderlands 2","Borderlands 3","Half-Life 2","Half-Life 2: Deathmatch",
+    "Portal","Portal 2","Mortal Kombat X","Mortal Kombat 1",
+    "Hello Neighbor","Hello Neighbor 2","Far Cry","Far Cry 2",
+    "Alan Wake","Alan Wake's American Nightmare","Poppy Playtime",
+    "Beyond: Two Souls","Days Gone","Detroit: Become Human",
+    "The Last of Us Part I","The Last of Us Part II Remastered",
+    "Marvel Spider-Man Remastered","Uncharted: Legacy of Thieves Collection",
+    "Life is Strange","Hellblade: Senua's Sacrifice","Cyberpunk 2077",
+    "Just Cause 3","Horizon Zero Dawn Complete Edition","Horizon Zero Dawn Remastered",
+    "Kingdom Come: Deliverance"
+  ];
 
-    const grid = document.getElementById('gamesGrid');
+  const grid = document.getElementById('gamesGrid');
+  games.forEach(game => {
+    const div = document.createElement('div');
+    div.classList.add('game-item');
+    div.innerHTML = `<img src="https://via.placeholder.com/120x100.png?text=${encodeURIComponent(game)}" alt="${game}"><span>${game}</span>`;
+    grid.appendChild(div);
+  });
+</script>
 
-    games.forEach((game) => {
-      const div = document.createElement('div');
-      div.classList.add('game-item');
-      // صورة placeholder مع اسم اللعبة
-      div.innerHTML = `
-        <img src="https://via.placeholder.com/120x100.png?text=${encodeURIComponent(game)}" alt="${game}">
-        <span>${game}</span>
-      `;
-      grid.appendChild(div);
-    });
-
-    function buyBundle() {
-      alert("تم إضافة الحزمة إلى سلة المشتريات! سيتم توجيهك لصفحة الدفع بسعر 4 دولار.");
-      // يمكنك ربط هذا ببوابة دفع حقيقية لاحقًا
-    }
-  </script>
 </body>
 </html>
